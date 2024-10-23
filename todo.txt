@@ -1,0 +1,6 @@
+TODO:
+  - Basics [ ]
+  - Collision [x]
+  - Death [x]
+  - Textures [ ]
+  - Sound [ ]
