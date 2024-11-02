@@ -18,6 +18,7 @@ impl Player {
             self.rect.x, self.rect.y, 
             self.rect.w, self.rect.h, 
             GREEN);}
+
     pub fn update(&mut self, obj: &Pipe, obj2: &Pipe, obj3: &Pipe) {
         let mut y_move = 0.0;
         if is_key_down(KeyCode::W) { y_move += 1.0 }

@@ -17,10 +17,13 @@ impl Pipe {
         draw_rectangle(
             self.rect.x, self.rect.y/*+ 150.0*/,
             self.rect.w, self.rect.h, RED);}
+
     pub fn update(&mut self, mv: f32) {
         let num = thread_rng().gen_range(0.0..screen_height() / 2.0);
         if self.rect.x < 10.0 { 
             self.rect.y = num;
-            self.rect.x = screen_width();}
-        self.rect.x -= mv;}
+            self.rect.x = screen_width();
+        }
+        self.rect.x -= mv;
+    }
 }
