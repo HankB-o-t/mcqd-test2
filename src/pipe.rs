@@ -2,9 +2,12 @@ use macroquad::prelude::*;
 use ::rand::Rng;
 use ::rand::thread_rng;
 
+const DT: f32 = 0.5;
+
 pub struct Pipe {
     pub rect: Rect,
 }
+
 impl Pipe {
     pub fn new() -> Self {
         Self {
@@ -24,6 +27,6 @@ impl Pipe {
             self.rect.y = num;
             self.rect.x = screen_width();
         }
-        self.rect.x -= mv;
+        self.rect.x -= mv * DT;
     }
 }

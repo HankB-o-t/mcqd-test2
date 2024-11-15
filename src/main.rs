@@ -11,6 +11,8 @@ async fn main() {
 
     loop { // shitty game loop
         clear_background(LIGHTGRAY);
+        draw_text("gravity.rs", 100.0, screen_height() / 2.0, 30.0, GRAY);
+        draw_text("press q to quit.", 100.0, screen_height() / 2.0 + 30.0, 30.0, GRAY);
         player.update(&pipe, &pipe2, &pipe3);
         player.draw();
         pipe.draw();
@@ -28,8 +30,6 @@ async fn main() {
         || player.rect.y <= -200.0 { break;}
         if is_key_down(KeyCode::Q) {break;}
 
-        draw_text("gravity.rs", 100.0, screen_height() / 2.0, 30.0, GRAY);
-        draw_text("press q to quit.", 100.0, screen_height() / 2.0 + 30.0, 30.0, GRAY);
         next_frame().await;
     }
 }

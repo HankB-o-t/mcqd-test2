@@ -1,6 +1,8 @@
 use macroquad::prelude::*;
 use crate::pipe::Pipe;
 
+const DT: f32 = 0.5;
+
 pub struct Player {
     pub rect: Rect,
 }
@@ -13,6 +15,7 @@ impl Player {
                 screen_height() / 2.0,
                 40.0,40.0
             ),}}
+
     pub fn draw(&self) {
         draw_rectangle(
             self.rect.x, self.rect.y, 
@@ -29,6 +32,6 @@ impl Player {
         }
         else {y_move -= 0.5}
         if is_key_down(KeyCode::P) { self.rect.y = screen_height() / 2.0 }
-        self.rect.y += y_move * 30.0 * -0.5;
+        self.rect.y += y_move * 30.0 * -0.5 * DT;
     }
 }
